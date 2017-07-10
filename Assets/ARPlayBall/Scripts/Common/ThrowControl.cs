@@ -10,11 +10,6 @@ public class ThrowControl : MonoBehaviour
 	public float lerpTimeFactorOnTouch = 7f;
 	public float cameraNearClipPlaneFactor = 7.5f;
 
-	public bool isThrowBackAvailable = false;
-
-
-	public bool isFullPathThrow = true;
-
 	public UnityEvent OnThrow;
     public UnityEvent OnReset;
 
@@ -30,18 +25,11 @@ public class ThrowControl : MonoBehaviour
 
 	private bool isThrown; 
 	private bool isHolding;
-
-	private bool isInputBegan = false;
-	private bool isInputEnded = false;
-	private bool isInputLast = false;
     private bool isInitialized = false;
 
 	void Start() 
 	{
 		_rigidbody = GetComponent<Rigidbody>();
-        // if (isFullPathThrow == false)
-        // sensivity = new Vector2(100f, 100f);
-        // speed = 45f;
         MoveBack();
 	    isInitialized = true;
 
@@ -49,11 +37,14 @@ public class ThrowControl : MonoBehaviour
 
 	void Update() 
 	{
-		#if UNITY_EDITOR
 
-			isInputBegan = Input.GetMouseButtonDown(0);
+
+     bool isInputBegan = false;
+    bool isInputEnded = false;
+#if UNITY_EDITOR
+
+    isInputBegan = Input.GetMouseButtonDown(0);
 			isInputEnded = Input.GetMouseButtonUp(0);
-			isInputLast = Input.GetMouseButton(0);
 
 			inputPositionCurrent = Input.mousePosition;
 
@@ -82,32 +73,18 @@ public class ThrowControl : MonoBehaviour
 					isHolding = true;
 					transform.SetParent (null);
 
-					if(isFullPathThrow)
-					{
 						inputPositionPivot = inputPositionCurrent;
-					}
+					
 				}
 			}
 		}
 
 		if(isInputEnded)
 		{
-			if (isThrowBackAvailable) 
-			{
-				Throw (inputPositionCurrent);
-			}
-			else
-			{
 				if(inputPositionPivot.y < inputPositionCurrent.y)
 				{ 
 					Throw (inputPositionCurrent);
 				}
-			}
-		}
-
-		if(isInputLast && !isFullPathThrow) 
-		{
-			inputPositionPivot = inputPositionCurrent;
 		}
 	}
 
