@@ -7872,6 +7872,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224206831757305708, guid: 3a7f70b628979e6438a69f6a3dda0dda,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224085655920020502, guid: 3a7f70b628979e6438a69f6a3dda0dda,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a7f70b628979e6438a69f6a3dda0dda, type: 2}
   m_IsPrefabParent: 0
@@ -8223,8 +8233,6 @@ MonoBehaviour:
   resetBallAfterSeconds: 5
   lerpTimeFactorOnTouch: 7
   cameraNearClipPlaneFactor: 7.5
-  isThrowBackAvailable: 0
-  isFullPathThrow: 1
   OnThrow:
     m_PersistentCalls:
       m_Calls: []
@@ -8411,8 +8419,6 @@ MonoBehaviour:
   resetBallAfterSeconds: 5
   lerpTimeFactorOnTouch: 7
   cameraNearClipPlaneFactor: 7.5
-  isThrowBackAvailable: 0
-  isFullPathThrow: 1
   OnThrow:
     m_PersistentCalls:
       m_Calls: []
@@ -19490,6 +19496,25 @@ Transform:
   m_Father: {fileID: 1362508272}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1472530526 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1802482727899222, guid: 3a7f70b628979e6438a69f6a3dda0dda,
+    type: 2}
+  m_PrefabInternal: {fileID: 607393791}
+--- !u!114 &1472530530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1472530526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.83921576, g: 0.28235295, b: 0.08627451, a: 1}
+  m_EffectDistance: {x: 10, y: -10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1473251624
 GameObject:
   m_ObjectHideFlags: 0
@@ -20906,7 +20931,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -21623,8 +21648,6 @@ MonoBehaviour:
   resetBallAfterSeconds: 5
   lerpTimeFactorOnTouch: 7
   cameraNearClipPlaneFactor: 7.5
-  isThrowBackAvailable: 0
-  isFullPathThrow: 1
   OnThrow:
     m_PersistentCalls:
       m_Calls: []
