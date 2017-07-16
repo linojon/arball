@@ -118,11 +118,8 @@ public class ThrowControl : MonoBehaviour
 
 		newBallPosition = Camera.main.ScreenToWorldPoint (inputPositionCurrent);
 
-		transform.localPosition = Vector3.Lerp (
-			transform.localPosition, 
-			newBallPosition, 
-			Time.deltaTime * lerpTimeFactorOnTouch
-		);
+        transform.localPosition =
+            newBallPosition;
 	}
 
 	void Throw(Vector2 inputPosition) 
